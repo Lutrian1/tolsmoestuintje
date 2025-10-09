@@ -3,7 +3,6 @@
     import { Background } from '$lib';
     import { Nav_bar } from '$lib';
     import { Splatter_behind_heading_SVG } from '$lib';
-    
 </script>
 
 <header>
