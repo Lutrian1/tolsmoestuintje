@@ -5,6 +5,8 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ---------------------------------------------      ALL TYPOGRAPHY        -------------------------------------------------*/
@@ -53,7 +55,12 @@ html, body{
         --secondary-font-medium: Daily-Magazine-Medium, Verdana, Geneva, Tahoma, sans-serif;
         --secondary-font-bold: Daily-Magazine-Black, Verdana, Geneva, Tahoma, sans-serif;
 
-        --heading1: var(--secondary-font-regular);
+        --heading-1-family: var(--secondary-font-regular);
+
+        /* --------------------------------------- Heading levels ------------------------------------ */
+
+        --heading-1: clamp(4.25rem, 10vw, 7.5rem);
+        --heading-2: clamp(3.75rem, 10vw, 6.5rem);
 
     }
 
@@ -71,7 +78,8 @@ html, body{
         --main-color: lch(14.13 7.93 320.87);
         --secondary-color: lch(81.54 44.59 322.16 / .5);
 
-        --heading-accent-color: lch(39.64 17.07 321.66);
 
+        --heading-color: lch(100% 0.01 296.81);
+        --heading-accent-color: lch(39.64 17.07 321.66);
     }
 }

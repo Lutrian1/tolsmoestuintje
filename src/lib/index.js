@@ -6,4 +6,4 @@ export { default as Background } from './components/Background.svelte'
 
 // SVG's / IMAGES
 
-export { default as Line_1_SVG } from './assets/line_1_SVG.svelte'
+export { default as Splatter_behind_heading_SVG } from './assets/splatter_behind_headingSVG.svelte'

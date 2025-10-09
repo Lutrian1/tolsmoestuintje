@@ -2,6 +2,7 @@
     import { Luuk_tol_trademark } from '$lib';
     import { Background } from '$lib';
     import { Nav_bar } from '$lib';
+    import { Splatter_behind_heading_SVG } from '$lib';
 </script>
 
 <header>
@@ -9,8 +10,15 @@
 </header>
 
 <main>
-    <h1>DIGITAL <span>GARDEN</span></h1>
-
+    <div class="heading-1-wrapper">
+        <h1>
+            DIGITAL 
+            <span>
+                GARDEN
+                <Splatter_behind_heading_SVG />
+            </span>
+        </h1>
+    </div>
 </main>
 
 <footer>
@@ -20,10 +28,48 @@
 <Background />
 
 <style>
-    h1{
-        font-family: var(--heading1);
+    .heading-1-wrapper{
+        display: flex;
+        justify-content: center;
+        h1{
+            position: relative;
+            font-family: var(--heading-1-family);
+            font-size: var(--heading-1);
+            color: var(--heading-color);
+            max-width: 550px;
+            text-align: center;
+            z-index: 1;
+            /* top | left and right | bottom */
+            margin: 5rem 0 0;
+            font-weight: 100;
+            line-height: 0.9em;
+            @media (min-width: 500px) and (max-width: 720px){
+                max-width: 450px;
+            }
+        }
     }
+
     span{
         color: var(--heading-accent-color);
     }
+
+    /* Reorder visually */
+    header {
+        order: 3;
+    }
+
+    main {
+        order: 2;
+        flex: 1;
+    }
+
+    footer {
+        order: 1;
+        display: grid;
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 0.5fr 1.4fr; 
+        grid-template-rows: 1fr; 
+        max-width: 60rem;
+    }
+
 </style>
