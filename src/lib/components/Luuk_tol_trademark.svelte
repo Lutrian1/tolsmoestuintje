@@ -55,7 +55,7 @@
     .about-me-text{
         font-size: clamp(0.7rem, 3vw, 1.75rem);
         margin: 0;
-        animation: animation_left-slide-in 1s ease-in;
+        animation: animation_left-slide-in 1.3s ease-in-out;
     }
 
     .about-me-container{
