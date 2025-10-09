@@ -84,6 +84,7 @@ header{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    z-index: 1;
 }
 
 /* ---------------------------------------------      FOOTER STYLING     -------------------------------------------------*/
@@ -99,5 +100,7 @@ header{
 
         container-type: inline-size;
         container-name: footer;
+
+        z-index: 1;
     }
 </style>

@@ -13,6 +13,7 @@ html[data-reduced-motion="no-preference"] {
   scroll-behavior:smooth;
 }
 
+
 /* ---------------------------------------------      GRID      -------------------------------------------------*/
 
 @layer grid{
