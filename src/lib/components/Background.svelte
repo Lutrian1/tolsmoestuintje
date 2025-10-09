@@ -1,31 +1,38 @@
+<script>
+    import { SplatterSVG } from '$lib';
+</script>
+
 <div class="background-noise"></div>
+
+<SplatterSVG />
 
 <div class="top-triangle"></div>
 <div class="bottom-triangle"></div>
 
 <style>
 
-    @media (min-width: 1100px){
-        .top-triangle {
-            position: absolute;
-            width: 20rem;
-            aspect-ratio: 1/cos(30deg);
-            clip-path: polygon(50% 100%,100% 0,0 0);
+    .top-triangle, .bottom-triangle{
+        position: absolute;
+        width: 20rem;
+        aspect-ratio: 1/cos(30deg);
+        opacity: 50%;
+        z-index: -1;
+        @media (min-width: 900px){
             background: #F9B3FF;
-            opacity: 50%;
+        }
+    }
+
+    @media (min-width: 900px){
+        .top-triangle {
+            clip-path: polygon(50% 100%,100% 0,0 0);
             top: 0;
             right: 0;
         }
     }
 
-    @media (min-width: 1100px){
+    @media (min-width: 900px){
         .bottom-triangle {
-            position: absolute;
-            width: 20rem;
-            aspect-ratio: 1/cos(30deg);
             clip-path: polygon(50% 0,100% 100%,0 100%);
-            background: #F9B3FF;
-            opacity: 50%;
             bottom: 0;
         }
     }

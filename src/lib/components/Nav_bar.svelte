@@ -5,7 +5,14 @@
 </nav>
 
 <style>
+    nav{
+        display: flex;
+        justify-content: space-around;
+    }
     a{
-        font-size: clamp(2rem, 3vw, 5rem);
+        color: var(--main-color);
+        font-size: clamp(2rem, 4vw, 7rem);
+        text-decoration: none;
+        opacity: 70%;
     }
 </style>

@@ -28,24 +28,35 @@
 <Background />
 
 <style>
-    .heading-1-wrapper{
+
+/* ---------------------------------------------      GRID      -------------------------------------------------*/
+
+    /* GRID Template areas */
+    footer { grid-area: footer; }
+    main { grid-area: h1; }
+    header { grid-area: header; }
+
+    /* Wrapper heading (Heading box styling) */
+    .heading-1-wrapper {
         display: flex;
         justify-content: center;
-        h1{
-            position: relative;
-            font-family: var(--heading-1-family);
-            font-size: var(--heading-1);
-            color: var(--heading-color);
-            max-width: 550px;
-            text-align: center;
-            z-index: 1;
-            /* top | left and right | bottom */
-            margin: 5rem 0 0;
-            font-weight: 100;
-            line-height: 0.9em;
-            @media (min-width: 500px) and (max-width: 720px){
-                max-width: 450px;
-            }
+    }
+
+/* ---------------------------------------------      MAIN CONTENT      -------------------------------------------------*/
+    
+    h1{
+        position: relative;
+        font-family: var(--heading-1-family);
+        font-size: var(--heading-1);
+        color: var(--heading-color);
+        max-width: 34.375rem;
+        text-align: center;
+        z-index: 1;
+        margin: 0;
+        font-weight: 100;
+        line-height: 0.9em;
+        @media (min-width: 500px) and (max-width: 720px){
+            max-width: 28.125rem;
         }
     }
 
@@ -53,23 +64,40 @@
         color: var(--heading-accent-color);
     }
 
-    /* Reorder visually */
+/* ---------------------------------------------      ORDER      -------------------------------------------------*/
+
     header {
         order: 3;
     }
 
     main {
         order: 2;
-        flex: 1;
     }
 
     footer {
         order: 1;
-        display: grid;
-        grid-auto-columns: 1fr; 
-        grid-template-columns: 0.5fr 1.4fr; 
-        grid-template-rows: 1fr; 
-        max-width: 60rem;
     }
 
+/* ---------------------------------------------      HEADER STYLING     -------------------------------------------------*/
+
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* ---------------------------------------------      FOOTER STYLING     -------------------------------------------------*/
+
+    footer{
+        display: grid;
+        gap: 1.5rem;
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 0.4fr 1.5fr; 
+        grid-template-rows: 1fr; 
+
+        /* CONTAINER NAMES */
+
+        container-type: inline-size;
+        container-name: footer;
+    }
 </style>

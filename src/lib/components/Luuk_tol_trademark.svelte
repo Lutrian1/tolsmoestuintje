@@ -7,13 +7,18 @@
 <h2> Luuk <span>Tol.</span></h2>
 
 <p class="about-me">Hello there! My name is Luuk Tol, and I'm a Front-End Development student at the HVA (University of Applied Sciences Amsterdam). 
-This site is my Digital Garden—a personal space on the web where I plant the seeds of new ideas and watch them grow. 
-It's a living collection of experiments, a playground where I tinker with code, explore new technologies, and push my creative boundaries. 
-Each project you'll find here is a step in my journey to hone my skills and become a better front-end developer.</p>
+This site is my Digital Garden—a personal space where you can see all my goofs and probably not great code, but atleast I learned something from it. 
+It's my collection of experiments, a playground where I tinker with code, explore new technologies, and push my creative boundaries. 
+So please, scroll around, and see what I have been working on, and hopefully you learn something new too.</p>
 
 <style>
     .copyright{
+        position: absolute;
         font-size: 0.9rem;
+        top: -1.1rem;
+        width: 8rem;
+        margin: 0;
+        opacity: 80%;
     }
 
     aside{
@@ -23,7 +28,7 @@ Each project you'll find here is a step in my journey to hone my skills and beco
     h2{
         font-size: var(--heading-2);
         position: relative;
-        max-width: 20rem;
+        max-width: 15rem;
         margin: 0;
           text-shadow: 
             2px   0  0   #000, 
@@ -55,6 +60,13 @@ Each project you'll find here is a step in my journey to hone my skills and beco
             position: absolute;
             width: 1px;
             z-index: 0;
+        }
+    }
+
+    @container footer (width < 65.625rem) {
+        .about-me{
+            max-width: 45rem;
+            font-size: clamp(0.7rem, 3vw, 1.5rem);
         }
     }
 </style>
