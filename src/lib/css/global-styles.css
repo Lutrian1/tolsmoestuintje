@@ -11,22 +11,49 @@ html, body{
 @layer typography{
 
 /* ---------------------------------------------      Font Faces        -------------------------------------------------*/
+
+
+    @font-face {
+        font-family: 'Delicious-Handrawn';
+        src: url($lib/assets/fonts/Delicious-Handrawn-Regular.ttf);
+    }
+    
     @font-face {
         font-family: 'Bayon';
         src: url($lib/assets/fonts/Bayon-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: 'Daily-Magazine-Regular';
+        src: url($lib/assets/fonts/Daily-Magazine-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: 'Daily-Magazine-Medium';
+        src: url($lib/assets/fonts/Daily-Magazine-Medium.ttf);
+    }
+
+    @font-face {
+        font-family: 'Daily-Magazine-ExtraBoldItalic';
+        src: url($lib/assets/fonts/Daily-Magazine-ExtraBoldItalic.ttf);
+    }
+
+    @font-face {
+        font-family: 'Daily-Magazine-Black';
+        src: url($lib/assets/fonts/Daily-Magazine-Black.ttf);
     }
 
     :root{
 
     /* ---------------------------------------------      Font Variables        -------------------------------------------------*/
 
-        --main-font: Bayon, Verdana, Geneva, Tahoma, sans-serif;
-    
-    /* ---------------------------------------------      Font weight and font styles       -------------------------------------------------*/
+        --main-font: Delicious-Handrawn, Verdana, Geneva, Tahoma, sans-serif;
 
-        --bold: 800;
-        --extra-bold: 1000;
-        --normal: 600;
+        --secondary-font-regular: Daily-Magazine-Regular, Verdana, Geneva, Tahoma, sans-serif;
+        --secondary-font-medium: Daily-Magazine-Medium, Verdana, Geneva, Tahoma, sans-serif;
+        --secondary-font-bold: Daily-Magazine-Black, Verdana, Geneva, Tahoma, sans-serif;
+
+        --heading1: var(--secondary-font-regular);
 
     }
 
@@ -38,11 +65,13 @@ html, body{
 
     :root{
 
-    /* ---------------------------------------------      Color Variables       -------------------------------------------------*/
+    /* ---------------------------------------------     Colors and variables      -------------------------------------------------*/
 
         --main-accent-color: lch(53.21 65.3 323.18);
-        --main-color: lch(0 0 0);
-        --secondary-color: lch(81.54 44.59 322.16 / .5)
+        --main-color: lch(14.13 7.93 320.87);
+        --secondary-color: lch(81.54 44.59 322.16 / .5);
+
+        --heading-accent-color: lch(39.64 17.07 321.66);
 
     }
 }
