@@ -17,9 +17,8 @@
         aspect-ratio: 1/cos(30deg);
         opacity: 50%;
         z-index: -1;
-        @media (min-width: 900px){
-            background: #F9B3FF;
-        }
+        display: none;
+        background: #F9B3FF;
     }
 
     @media (min-width: 900px){
@@ -27,6 +26,7 @@
             clip-path: polygon(50% 100%,100% 0,0 0);
             top: 0;
             right: 0;
+            display: block;
         }
     }
 
@@ -34,6 +34,7 @@
         .bottom-triangle {
             clip-path: polygon(50% 0,100% 100%,0 100%);
             bottom: 0;
+            display: block;
         }
     }
     .background-noise{

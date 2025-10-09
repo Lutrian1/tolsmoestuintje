@@ -31,10 +31,10 @@ html[data-reduced-motion="no-preference"] {
 
         grid-template-areas:    
         ". . . . . . . . . . . . . . ."
-        ". footer footer footer footer footer footer footer footer footer footer footer footer . ."
-        ". footer footer footer footer footer footer footer footer footer footer footer footer . ."
-        ". footer footer footer footer footer footer footer footer footer footer footer footer . ."
-        ". footer footer footer footer footer footer footer footer footer footer footer footer . . "
+        ". footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
+        ". footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
+        ". footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
+        ". footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
         ". . . . . . . . . . . . . . ."
         ". . . h1 h1 h1 h1 h1 h1 h1 h1 h1 . . ."
         ". . . h1 h1 h1 h1 h1 h1 h1 h1 h1 . . ."
@@ -48,7 +48,7 @@ html[data-reduced-motion="no-preference"] {
         ". . . . . . . . . . . . . . ."; 
         }
 
-    @media (min-width: 900px){
+    @media (min-width: 950px){
         body{
             display: grid;
             grid-template-columns: repeat(var(--columns), 1fr);
@@ -58,10 +58,10 @@ html[data-reduced-motion="no-preference"] {
 
             grid-template-areas:    
             ". . . . . . . . . . . . . . ."
-            ". . footer footer footer footer footer footer footer footer footer footer footer footer ."
-            ". . footer footer footer footer footer footer footer footer footer footer footer footer ."
-            ". . footer footer footer footer footer footer footer footer footer footer footer footer ."
-            ". . footer footer footer footer footer footer footer footer footer footer footer footer ."
+            ". . footer footer footer footer footer footer footer footer footer footer footer . ."
+            ". . footer footer footer footer footer footer footer footer footer footer footer . ."
+            ". . footer footer footer footer footer footer footer footer footer footer footer . ."
+            ". . footer footer footer footer footer footer footer footer footer footer footer . ."
             ". . . . . . . . . . . . . . ."
             ". . . h1 h1 h1 h1 h1 h1 h1 h1 h1 . . ."
             ". . . h1 h1 h1 h1 h1 h1 h1 h1 h1 . . ."

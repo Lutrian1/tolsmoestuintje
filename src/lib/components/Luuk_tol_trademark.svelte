@@ -56,7 +56,7 @@ So please, scroll around, and see what I have been working on, and hopefully you
             content: "";
             display: block;
             height: 10rem;
-            left: -2rem;
+            left: -2vw;
             position: absolute;
             width: 1px;
             z-index: 0;
