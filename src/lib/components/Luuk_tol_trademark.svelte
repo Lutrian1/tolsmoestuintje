@@ -6,10 +6,14 @@
 
 <h2> Luuk <span>Tol.</span></h2>
 
-<p class="about-me">Hello there! My name is Luuk Tol, and I'm a Front-End Development student at the HVA (University of Applied Sciences Amsterdam). 
-This site is my Digital Garden—a personal space where you can see all my goofs and probably not great code, but atleast I learned something from it. 
-It's my collection of experiments, a playground where I tinker with code, explore new technologies, and push my creative boundaries. 
-So please, scroll around, and see what I have been working on, and hopefully you learn something new too.</p>
+<article class="about-me-container">
+
+    <p class="about-me-text">Hello there! My name is Luuk Tol, and I'm a Front-End Development student at the HVA (University of Applied Sciences Amsterdam). 
+    This site is my Digital Garden—a personal space where you can see all my goofs and probably not great code, but atleast I learned something from it. 
+    It's my collection of experiments, a playground where I tinker with code, explore new technologies, and push my creative boundaries. 
+    So please, scroll around, and see what I have been working on, and hopefully you learn something new too.</p>
+
+</article>
 
 <style>
     .copyright{
@@ -48,9 +52,13 @@ So please, scroll around, and see what I have been working on, and hopefully you
         }
     }
 
-    .about-me{
+    .about-me-text{
         font-size: clamp(0.7rem, 3vw, 1.75rem);
         margin: 0;
+        animation: animation_left-slide-in 1s ease-in;
+    }
+
+    .about-me-container{
         position: relative;
         display: flex;
         align-items: center;
@@ -67,9 +75,11 @@ So please, scroll around, and see what I have been working on, and hopefully you
     }
 
     @container footer (width < 65.625rem) {
-        .about-me{
+        .about-me-container{
             max-width: 45rem;
-            font-size: clamp(0.7rem, 3vw, 1.5rem);
+            .about-me-text{
+                font-size: clamp(0.7rem, 3vw, 1.5rem);
+            }
         }
     }
 </style>

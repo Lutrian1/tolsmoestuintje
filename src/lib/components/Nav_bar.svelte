@@ -1,7 +1,7 @@
 <nav>
-    <a href="/">About me</a>
-    <a href="/blog">Blog</a>
-    <a href="/experiments">Experiments</a>
+    <a href="/" class="about-me">About me</a>
+    <a href="/blog" class="blog">Blog</a>
+    <a href="/experiments" class="experiments">Experiments</a>
 </nav>
 
 <style>
