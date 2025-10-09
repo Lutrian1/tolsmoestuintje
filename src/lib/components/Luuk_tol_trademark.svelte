@@ -29,6 +29,9 @@ So please, scroll around, and see what I have been working on, and hopefully you
         font-size: var(--heading-2);
         position: relative;
         max-width: 15rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         margin: 0;
           text-shadow: 
             2px   0  0   #000, 

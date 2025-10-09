@@ -14,5 +14,9 @@
         font-size: clamp(2rem, 4vw, 7rem);
         text-decoration: none;
         opacity: 70%;
+        &:hover{
+            color: var(--main-accent-color);
+            opacity: 100%;
+        }
     }
 </style>
