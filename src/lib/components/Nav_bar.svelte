@@ -5,13 +5,22 @@
 </nav>
 
 <style>
-    nav{
+
+    nav {
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;   
     }
+
+    @container header (min-width: 28.125rem) {
+        nav {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
     a{
         color: var(--main-color);
-        font-size: clamp(2rem, 4vw, 7rem);
+        font-size: clamp(3rem, 4vw, 7rem);
         text-decoration: none;
         opacity: 70%;
         &:hover{

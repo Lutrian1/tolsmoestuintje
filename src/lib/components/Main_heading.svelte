@@ -44,8 +44,13 @@
         font-family: var(--heading-1-family);
         font-size: 1.5rem;
         text-align: center;
+        display: none;
         opacity: 60%;
         margin: 0.5rem 0 0 0 ;
+        @media (min-width: 950px){
+            display: block;
+        }
+
     }
 
     span{

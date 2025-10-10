@@ -151,7 +151,7 @@
 		transition: transform 0.3s ease-out;
 	}
 
-	@media (min-width: 900px) {
+	@media (min-width: 950px) {
 		.top-triangle {
 			clip-path: polygon(50% 100%, 100% 0, 0 0);
 			top: 0;

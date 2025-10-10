@@ -48,6 +48,8 @@ header{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    container-name: header;
+    container-type: inline-size;
     z-index: 1;
 }
 
