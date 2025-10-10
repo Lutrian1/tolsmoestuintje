@@ -2,7 +2,7 @@
     import { Luuk_tol_trademark } from '$lib';
     import { Background } from '$lib';
     import { Nav_bar } from '$lib';
-    import { Splatter_behind_heading_SVG } from '$lib';
+    import { Main_heading } from '$lib';
 </script>
 
 <header>
@@ -10,16 +10,7 @@
 </header>
 
 <main>
-    <div class="heading-1-wrapper">
-        <h1>
-            DIGITAL 
-            <span>
-                GARDEN
-                <Splatter_behind_heading_SVG />
-            </span>
-        </h1>
-    </div>
-    <p class="tip-p">Mouse click to start painting!</p>
+   <Main_heading />
 </main>
 
 <footer>
@@ -34,44 +25,8 @@
 
     /* GRID Template areas */
     footer { grid-area: footer; }
-    main { grid-area: h1; }
+    main { grid-area: main; }
     header { grid-area: header; }
-
-    /* Wrapper heading (Heading box styling) */
-    .heading-1-wrapper {
-        display: flex;
-        justify-content: center;
-    }
-
-/* ---------------------------------------------      MAIN CONTENT      -------------------------------------------------*/
-    
-    h1{
-        position: relative;
-        font-family: var(--heading-1-family);
-        font-size: var(--heading-1);
-        color: var(--heading-color);
-        max-width: 34.375rem;
-        text-align: center;
-        z-index: 1;
-        margin: 0;
-        font-weight: 100;
-        line-height: 0.9em;
-        @media (min-width: 500px) and (max-width: 720px){
-            max-width: 28.125rem;
-        }
-    }
-
-    .tip-p{
-        font-family: var(--heading-1-family);
-        font-size: 1.5rem;
-        text-align: center;
-        opacity: 60%;
-        margin: 0.5rem 0 0 0 ;
-    }
-
-    span{
-        color: var(--heading-accent-color);
-    }
 
 /* ---------------------------------------------      ORDER      -------------------------------------------------*/
 
