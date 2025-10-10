@@ -19,6 +19,7 @@
             </span>
         </h1>
     </div>
+    <p class="tip-p">Mouse click to start painting!</p>
 </main>
 
 <footer>
@@ -58,6 +59,14 @@
         @media (min-width: 500px) and (max-width: 720px){
             max-width: 28.125rem;
         }
+    }
+
+    .tip-p{
+        font-family: var(--heading-1-family);
+        font-size: 1.5rem;
+        text-align: center;
+        opacity: 60%;
+        margin: 0.5rem 0 0 0 ;
     }
 
     span{
