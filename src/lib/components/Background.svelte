@@ -10,11 +10,15 @@
 
 	let context;
 	let width, height;
-	let startPos, prevPos, dist;
-	const colour = '#BB57C4';
+	let lastX = null;
+	let lastY = null;
+	const brushColor = { r: 187, g: 87, b: 196 }; // #BB57C4 in RGB
+	let baseBrushSize;
 
 	onMount(() => {
-		// Triangle hover movement
+		// =======================
+		// Triangle Follow Code
+		// =======================
 		const handleMouseMove = (e) => {
 			if (!topTriangle || !bottomTriangle) return;
 
@@ -32,94 +36,125 @@
 
 		document.addEventListener('mousemove', handleMouseMove);
 
-		// Canvas setup
-		context = canvas.getContext('2d');
-		width = window.innerWidth;
-		height = window.innerHeight;
+		// =======================
+		// Only run on desktop
+		// =======================
+		if (window.innerWidth > 768) {
+			context = canvas.getContext('2d');
+			width = window.innerWidth;
+			height = window.innerHeight;
 
-		canvas.width = width;
-		canvas.height = height;
+			canvas.width = width;
+			canvas.height = height;
 
-		startPos = { x: width / 2, y: height / 2 };
-		prevPos = { x: width / 2, y: 0 };
-		dist = { x: 0, y: 0 };
+			// =======================
+			// Canvas Click: Toggle Painting Mode
+			// =======================
+			const handleClick = (e) => {
+				isPainting = !isPainting;
 
-		// Painting logic
-		const mouseMove = (e) => {
-			if (!isPainting) return;
+				if (isPainting) {
+					baseBrushSize = getRandomSize(); // Get a new brush size
+					lastX = null;
+					lastY = null;
+					canvas.classList.remove('hidden');
+				} else {
+					context.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+					canvas.classList.add('hidden');
+					lastX = null;
+					lastY = null;
+				}
+			};
 
-			const distance = Math.sqrt(
-				Math.pow(prevPos.x - startPos.x, 2) +
-				Math.pow(prevPos.y - startPos.y, 2)
-			);
+			// =======================
+			// Mouse Move: Draw Line If Painting Is Enabled
+			// =======================
+			const handleDraw = (e) => {
+				if (!isPainting) return;
 
-			const a = distance * 10 * (Math.pow(Math.random(), 2) - 0.5);
-			const r = Math.random() - 0.5;
-			const size = (Math.random() * 15) / distance;
+				const x = e.clientX;
+				const y = e.clientY;
 
-			dist.x = (prevPos.x - startPos.x) * Math.sin(0.5) + startPos.x;
-			dist.y = (prevPos.y - startPos.y) * Math.cos(0.5) + startPos.y;
+				if (lastX === null || lastY === null) {
+					lastX = x;
+					lastY = y;
+					return;
+				}
 
-			startPos.x = prevPos.x;
-			startPos.y = prevPos.y;
+				const opacity = 0.8 + Math.random() * 0.7;
+				const sizeVariation = Math.random() * 4 - 2;
+				const brushSize = Math.max(2, baseBrushSize + sizeVariation);
 
-			prevPos.x = e.clientX;
-			prevPos.y = e.clientY;
+				context.strokeStyle = `rgba(${brushColor.r}, ${brushColor.g}, ${brushColor.b}, ${opacity.toFixed(2)})`;
+				context.lineWidth = brushSize;
+				context.lineCap = 'round';
+				context.lineJoin = 'round';
 
-			const lWidth =
-				(Math.random() + 2 - 0.5) * size +
-				(1 - Math.random() + 1.5 - 0.5) * size;
+				context.beginPath();
+				context.moveTo(lastX, lastY);
+				context.lineTo(x, y);
+				context.stroke();
+				context.closePath();
 
-			context.lineWidth = lWidth;
-			context.lineCap = 'round';
-			context.lineJoin = 'round';
+				// Optional splatter effect
+				if (Math.random() < 0.1) {
+					drawSplatter(x, y);
+				}
 
-			context.beginPath();
-			context.moveTo(startPos.x, startPos.y);
-			context.quadraticCurveTo(dist.x, dist.y, prevPos.x, prevPos.y);
+				lastX = x;
+				lastY = y;
+			};
 
-			context.fillStyle = colour;
-			context.strokeStyle = colour;
-
-			context.moveTo(startPos.x + a, startPos.y + a);
-			context.lineTo(startPos.x + r + a, startPos.y + r + a);
-
-			context.stroke();
-			context.fill();
-			context.closePath();
-		};
-
-		const handleClick = (e) => {
-			isPainting = !isPainting;
-
-			if (isPainting) {
-				startPos = { x: e.clientX, y: e.clientY };
-				prevPos = { x: e.clientX, y: e.clientY };
-				canvas.classList.remove('hidden');
-			} else {
-				canvas.classList.add('hidden');
+			// =======================
+			// Helpers: Random Brush Size
+			// =======================
+			function getRandomSize() {
+				return Math.floor(Math.random() * 15) + 5;
 			}
-		};
 
-		const handleDoubleClick = (e) => {
-			e.preventDefault();
-			context.clearRect(0, 0, width, height);
-			isPainting = false;
-			canvas.classList.add('hidden');
-		};
+			// =======================
+			// Splatter Drawing Function
+			// =======================
+			function drawSplatter(x, y) {
+				const dots = Math.floor(Math.random() * 5) + 3;
 
-		document.addEventListener('mousemove', mouseMove);
-		document.addEventListener('click', handleClick);
-		document.addEventListener('dblclick', handleDoubleClick);
+				for (let i = 0; i < dots; i++) {
+					const angle = Math.random() * Math.PI * 2;
+					const distance = Math.random() * 30 + 5;
+					const dotX = x + Math.cos(angle) * distance;
+					const dotY = y + Math.sin(angle) * distance;
+					const dotSize = Math.random() * 3 + 1;
+					const opacity = Math.random() * 0.5 + 0.2;
 
-		return () => {
-			document.removeEventListener('mousemove', handleMouseMove);
-			document.removeEventListener('mousemove', mouseMove);
-			document.removeEventListener('click', handleClick);
-			document.removeEventListener('dblclick', handleDoubleClick);
-		};
+					context.beginPath();
+					context.arc(dotX, dotY, dotSize, 0, Math.PI * 2);
+					context.fillStyle = `rgba(${brushColor.r}, ${brushColor.g}, ${brushColor.b}, ${opacity.toFixed(2)})`;
+					context.fill();
+					context.closePath();
+				}
+			}
+
+			// Reset last position on mouse leave
+			const handleMouseLeave = () => {
+				lastX = null;
+				lastY = null;
+			};
+
+			document.addEventListener('click', handleClick);
+			document.addEventListener('mousemove', handleDraw);
+			canvas.addEventListener('mouseleave', handleMouseLeave);
+
+			// Cleanup
+			return () => {
+				document.removeEventListener('mousemove', handleMouseMove);
+				document.removeEventListener('click', handleClick);
+				document.removeEventListener('mousemove', handleDraw);
+				canvas.removeEventListener('mouseleave', handleMouseLeave);
+			};
+		}
 	});
 </script>
+
 
 <div class="container">
 	<div class="background-noise"></div>
@@ -129,7 +164,7 @@
 	<div class="bottom-triangle" bind:this={bottomTriangle}></div>
 </div>
 
-<canvas bind:this={canvas} id="canvas" class="hidden"></canvas>
+<canvas bind:this={canvas} class="hidden"></canvas>
 
 <style>
 	.container {
