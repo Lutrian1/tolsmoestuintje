@@ -226,6 +226,8 @@
 		pointer-events: none;
 	}
 
+	/* SUPER IMPORTANT, THIS CLASS HIDES THE CANVAS */
+
 	.hidden {
 		display: none;
 	}
