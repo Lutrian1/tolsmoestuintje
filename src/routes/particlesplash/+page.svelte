@@ -8,6 +8,8 @@
   onMount(() => {
 
     let fade_out_time = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--fade-out-time'), 10); // Is hetzelfde als de variable in de stylesheet, de 10 betekent decimals: Jad
+    // ParseInt: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+    // Aanspreken van css: https://stackoverflow.com/questions/36088655/accessing-a-css-custom-property-aka-css-variable-through-javascript
 
     //Geeft een lege array mee gelijk aan het aantal, het aantal word via de random functie aangesproken bij 'dots'
     function dots(amount) {
