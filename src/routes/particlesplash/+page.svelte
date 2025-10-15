@@ -7,7 +7,7 @@
   // Wacht tot de DOM geladen is
   onMount(() => {
 
-    let fade_out_time = 500; // Moet hetzelfde zijn als die in css, de 'fade-out-time' variablen.
+    let fade_out_time = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--fade-out-time'), 10); // Is hetzelfde als de variable in de stylesheet, de 10 betekent decimals: Jad
 
     //Geeft een lege array mee gelijk aan het aantal, het aantal word via de random functie aangesproken bij 'dots'
     function dots(amount) {
@@ -127,6 +127,6 @@
   :global(.particle-animations) {
     animation:
       fadeToTransparent var(--fade-out-time) forwards,
-      disperse 500ms forwards ease-out;
+      disperse var(--fade-out-time) forwards ease-out;
   }
 </style>
