@@ -8,7 +8,13 @@ html, body{
     margin: 0;
     padding: 0;
     animation: animation_left-slide-in 1s ease-in-out;
-    overflow: clip;
+
+    @media (max-height: 749px) {
+        height: 200vh;
+    }
+    @media (min-height: 750px) {
+        height: 100%;
+    }
 }
 
 html[data-reduced-motion="no-preference"] {
@@ -49,8 +55,36 @@ html[data-reduced-motion="no-preference"] {
         ". . . . header header header header header header header header header . ."
         ". . . . header header header header header header header header header . ."
         }
+    /* ---------------------------------------------     TUSSEN GEDEELTE     -------------------------------------------------*/
+    @media (min-width: 750px){
+        body{
+            display: grid;
+            grid-template-columns: repeat(var(--columns), 1fr);
+            grid-template-rows: repeat(var(--rows), 1fr);
+            min-height: 100vh;
+            gap: var(--gap);
+
+            grid-template-areas:    
+            ". . . . . . . . . . . . . . ."
+            ". footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
+            ". footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
+            ". footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
+            ". footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
+            ". . . . . . . . . . . . . . ."
+            ". . . main main main main main main main main main . . ."
+            ". . . main main main main main main main main main . . ."
+            ". . . main main main main main main main main main . . ."
+            ". . . main main main main main main main main main . . ."
+            ". . . main main main main main main main main main . . ."
+            ". . . . . . . . . . . . . . ."
+            ". . header header header header header header header header header header header . ."
+            ". . header header header header header header header header header header header . ."
+            ". . header header header header header header header header header header header . ."
+            ". . . . . . . . . . . . . . ."; 
+        }
+    }
     /* ---------------------------------------------     DESKTOP     -------------------------------------------------*/
-    @media (min-width: 950px){
+    @media (min-width: 1150px){
         body{
             display: grid;
             grid-template-columns: repeat(var(--columns), 1fr);
@@ -163,12 +197,14 @@ html[data-reduced-motion="no-preference"] {
 
         from {
             opacity: 0;
+            overflow: clip;
             -webkit-transform: translate3d(-3%, 0, 0);
             transform: translate3d(-3%, 0, 0);
         }
 
         to {
             opacity: 1;
+            overflow: clip;
             -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
         }
