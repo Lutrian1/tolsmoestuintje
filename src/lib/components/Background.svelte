@@ -47,6 +47,13 @@
 	}
 
 	$effect(() => {
+
+		//Betekend (*3): 
+		// if (!canvas) {
+		// console.log('Canvas is not ready');
+		// return;
+		// }
+
 		if (!canvas || !topTriangle || !bottomTriangle) return;
 
 		// =======================
