@@ -2,7 +2,13 @@
     import { beforeNavigate } from '$app/navigation';
     import { onMount } from 'svelte';
 
-    // Adding grid so the site follows the grid in the global-stylesheet, beforenavigate: https://svelte.dev/docs/kit/$app-navigation
+    // Voor elke route in experiment, maar hier een nieuwe route aan als je nieuwe code hebt.
+    const experimentRoutes = [
+		{ date: '11-02-2025', name: 'Mouse draw on hover', type: 'Javascript', path: '/experiments/mousedraw' },
+		{ date: '15-02-2025', name: 'Particle splash on button click', type: 'CSS-Only', path: '/experiments/particlesplash' }
+	];
+
+    // Adding block so the site doesn't follow the grid used in the homepage
 	onMount(() => {
 		document.body.style.display = 'block';
 
@@ -10,10 +16,21 @@
 			document.body.style.display = 'block';
 		});
 	});
-    
 </script>
 
 <h1><span>MY</span> <span>EXPERIMENTS</span></h1>
+
+<nav>
+	<ul>
+		{#each experimentRoutes as route}
+			<li>
+                <aside>{route.type}</aside>
+                <a href={route.path}>{route.name}</a>
+                <aisde>{route.date}</aisde>
+            </li>
+		{/each}
+	</ul>
+</nav>
 
 <style>
 
@@ -40,5 +57,4 @@
             font-size: 15vw;
         }
     }
-
 </style>
