@@ -1,21 +1,10 @@
 <script>
-    import { onMount } from 'svelte';
-    import { beforeNavigate } from '$app/navigation';
-
     import { Luuk_tol_trademark } from '$lib';
     import { Background } from '$lib';
     import { Nav_bar } from '$lib';
     import { Main_heading } from '$lib';
 
-    // Adding grid so the site follows the grid in the global-stylesheet, beforenavigate: https://svelte.dev/docs/kit/$app-navigation
-	onMount(() => {
-		document.body.style.display = 'grid';
-
-		beforeNavigate(() => {
-			document.body.style.display = 'grid';
-		});
-	});
-
+    import '$lib/css/grid-homepage.css';
 </script>
 
 <header>
