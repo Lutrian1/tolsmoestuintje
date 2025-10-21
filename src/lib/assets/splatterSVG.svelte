@@ -488,7 +488,8 @@
 
 <style>
     svg{
-        position: absolute;
+        position: fixed;
+        object-fit: cover;
         width: 100%;
         height: 100%;
         top: 0;

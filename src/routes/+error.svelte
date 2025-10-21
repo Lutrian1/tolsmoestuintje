@@ -2,35 +2,27 @@
 	import { page } from '$app/state';
   import { Background } from '$lib';
   import { Main_heading } from '$lib';
-
 </script>
 
-<header>
+<main>
   <h1>Oops, a <strong>404 {page.error.message}</strong></h1>
   <p>We couldn't find the page you were looking for. Navigate back to the homepage.</p>
 
   <a href="/">Home</a>
-</header>
-
-<main>
-  <Background />
 </main>
+
+<Background />
 
 <style>
 
-header{
-  position: fixed;
+main{
   display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
   z-index: 5000;
-}
-
-main{
-  opacity: 40%;
 }
 
 h1{

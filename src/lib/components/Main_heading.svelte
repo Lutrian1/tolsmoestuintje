@@ -35,7 +35,7 @@
         margin: 0;
         font-weight: 100;
         line-height: 0.9em;
-        @media (min-width: 500px) and (max-width: 720px){
+        @media (min-width: 500px) and (max-width: 750px){
             max-width: 28.125rem;
         }
     }

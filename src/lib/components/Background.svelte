@@ -156,27 +156,20 @@
 </script>
 
 
-<div class="container">
-	<div class="background-noise"></div>
-	<SplatterSVG />
 
-	<div class="top-triangle" bind:this={topTriangle}></div>
-	<div class="bottom-triangle" bind:this={bottomTriangle}></div>
-</div>
+<div class="background-noise"></div>
+<SplatterSVG />
+
+<div class="top-triangle" bind:this={topTriangle}></div>
+<div class="bottom-triangle" bind:this={bottomTriangle}></div>
+
 
 <canvas bind:this={canvas} class="hidden"></canvas>
 
 <style>
-	.container {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		overflow: clip;
-	}
-
 	.top-triangle,
 	.bottom-triangle {
-		position: absolute;
+		position: fixed;
 		width: 20rem;
 		aspect-ratio: 1 / cos(30deg);
 		opacity: 50%;
@@ -211,7 +204,6 @@
 		width: 200%;
 		height: 200%;
 		background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-		background-repeat: repeat;
 		opacity: 0.9;
 		z-index: 100;
 		pointer-events: none;
