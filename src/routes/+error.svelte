@@ -1,6 +1,19 @@
 <script>
 	import { page } from '$app/state';
   import { Main_heading } from '$lib';
+
+  import { beforeNavigate } from '$app/navigation';
+  import { onMount } from 'svelte';
+
+  // Adding grid so the site follows the grid in the global-stylesheet, beforenavigate: https://svelte.dev/docs/kit/$app-navigation
+	onMount(() => {
+		document.body.style.display = 'block';
+
+		beforeNavigate(() => {
+			document.body.style.display = 'block';
+		});
+	});
+
 </script>
 
 <main>
@@ -11,35 +24,34 @@
 </main>
 
 <style>
-
-main{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 5000;
-}
-
-h1{
-  font-family: var(--main-font);
-  font-size: var(--heading-1);
-  margin: 0 0 1rem 0;
-  strong{
-    color: var(--main-accent-color);
+  main{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 5000;
   }
-}
 
-p{
-  font-size: var(--heading-3);
-  margin: 0 0 1rem 0;
-  text-align: center;
-}
+  h1{
+      font-family: var(--main-font);
+      font-size: var(--heading-1);
+      margin: 0 0 1rem 0;
+      strong{
+        color: var(--main-accent-color);
+      }
+  }
 
-a{
-  font-size: var(--heading-3);
-}
+  p{
+      font-size: var(--heading-3);
+      margin: 0 0 1rem 0;
+      text-align: center;
+  }
+
+  a{
+      font-size: var(--heading-3);
+  }
 
 
 </style>
