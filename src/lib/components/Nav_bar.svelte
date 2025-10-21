@@ -10,29 +10,31 @@
         display: flex;
         flex-direction: column;   
         text-align: center;
-        gap: 0.2rem;
+        gap: 0.5rem;
     }
 
     @container header (min-width: 28.125rem) {
         nav {
             flex-direction: row;
             justify-content: space-around;
+            gap: 0;
         }
     }
 
     a{
         color: var(--main-color);
+        opacity: 80%;
         font-size: clamp(3rem, 4vw, 7rem);
         text-decoration: none;
-        background-color: var(--secondary-accent-color);
-        border: solid 2px var(--main-accent-color);
+        background: linear-gradient(white 60%, var(--secondary-accent-color));
+        border-bottom: solid 2px var(--main-accent-color);
     }
 
     @container header (min-width: 28.125rem) {
         a{
             color: var(--main-color);
-            background-color: transparent;
-            border: none;
+            border-bottom: none;
+            background: transparent;
             opacity: 70%;
             &:hover{
                 color: var(--main-accent-color);
