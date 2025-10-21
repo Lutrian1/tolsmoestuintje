@@ -72,6 +72,10 @@ html[data-reduced-motion="no-preference"] {
 
     }
 
+    h1{
+        font-family: var(--heading-1-family);
+    }
+
 }
 
 /* ---------------------------------------------      ALL COLORS         -------------------------------------------------*/

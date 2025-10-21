@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/state';
-  import { Background } from '$lib';
   import { Main_heading } from '$lib';
 </script>
 
@@ -10,8 +9,6 @@
 
   <a href="/">Home</a>
 </main>
-
-<Background />
 
 <style>
 
@@ -26,6 +23,7 @@ main{
 }
 
 h1{
+  font-family: var(--main-font);
   font-size: var(--heading-1);
   margin: 0 0 1rem 0;
   strong{

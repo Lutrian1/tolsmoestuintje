@@ -26,7 +26,6 @@
     
     h1{
         position: relative;
-        font-family: var(--heading-1-family);
         font-size: var(--heading-1);
         color: var(--heading-color);
         max-width: 34.375rem;

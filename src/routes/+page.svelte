@@ -1,6 +1,5 @@
 <script>
     import { Luuk_tol_trademark } from '$lib';
-    import { Background } from '$lib';
     import { Nav_bar } from '$lib';
     import { Main_heading } from '$lib';
 
@@ -18,8 +17,6 @@
 <footer>
     <Luuk_tol_trademark />
 </footer>
-
-<Background />
 
 <style>
 

@@ -1,5 +1,6 @@
 <script>
 	import signature from '$lib/assets/signature.avif';
+	import { Background } from '$lib';
 	import '$lib/css/global-styles.css';
 
 	let { children } = $props();
@@ -11,3 +12,5 @@
 </svelte:head>
 
 {@render children?.()}
+
+<Background />
