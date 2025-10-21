@@ -1,7 +1,10 @@
 <script>
-	import { onMount } from 'svelte';
 	import { SplatterSVG } from '$lib';
 
+	
+	// =======================
+	// Variables
+	// =======================
 	let topTriangle;
 	let bottomTriangle;
 	let canvas;
@@ -12,16 +15,44 @@
 	let width, height;
 	let lastX = null;
 	let lastY = null;
-	const brushColor = { r: 187, g: 87, b: 196 }; // #BB57C4 in RGB
+	const brushColor = $state('#bb57c4'); // #BB57C4 in RGB
 	let baseBrushSize;
 
-	onMount(() => {
+	// =======================
+	// Helpers: Random Brush Size
+	// =======================
+	function getRandomSize() {
+		return Math.floor(Math.random() * 15) + 5;
+	}
+
+	// =======================
+	// Splatter Drawing Function
+	// =======================
+	function drawSplatter(x, y) {
+		const dots = Math.floor(Math.random() * 5) + 3;
+
+		for (let i = 0; i < dots; i++) {
+			const angle = Math.random() * Math.PI * 2;
+			const distance = Math.random() * 30 + 5;
+			const dotX = x + Math.cos(angle) * distance;
+			const dotY = y + Math.sin(angle) * distance;
+			const dotSize = Math.random() * 3 + 1;
+
+			context.beginPath();
+			context.arc(dotX, dotY, dotSize, 0, Math.PI * 2);
+			context.fillStyle = brushColor;
+			context.fill();
+			context.closePath();
+		}
+	}
+
+	$effect(() => {
+		if (!canvas || !topTriangle || !bottomTriangle) return;
+
 		// =======================
 		// Triangle Follow Code
 		// =======================
 		const handleMouseMove = (e) => {
-			if (!topTriangle || !bottomTriangle) return;
-
 			const mouseX = e.clientX;
 			const windowWidth = window.innerWidth;
 			const moveAmount = 500;
@@ -81,11 +112,10 @@
 					return;
 				}
 
-				const opacity = 0.8 + Math.random() * 0.7;
 				const sizeVariation = Math.random() * 4 - 2;
 				const brushSize = Math.max(2, baseBrushSize + sizeVariation);
 
-				context.strokeStyle = `rgba(${brushColor.r}, ${brushColor.g}, ${brushColor.b}, ${opacity.toFixed(2)})`;
+				context.strokeStyle = brushColor;
 				context.lineWidth = brushSize;
 				context.lineCap = 'round';
 				context.lineJoin = 'round';
@@ -106,35 +136,8 @@
 			};
 
 			// =======================
-			// Helpers: Random Brush Size
-			// =======================
-			function getRandomSize() {
-				return Math.floor(Math.random() * 15) + 5;
-			}
-
-			// =======================
-			// Splatter Drawing Function
-			// =======================
-			function drawSplatter(x, y) {
-				const dots = Math.floor(Math.random() * 5) + 3;
-
-				for (let i = 0; i < dots; i++) {
-					const angle = Math.random() * Math.PI * 2;
-					const distance = Math.random() * 30 + 5;
-					const dotX = x + Math.cos(angle) * distance;
-					const dotY = y + Math.sin(angle) * distance;
-					const dotSize = Math.random() * 3 + 1;
-					const opacity = Math.random() * 0.5 + 0.2;
-
-					context.beginPath();
-					context.arc(dotX, dotY, dotSize, 0, Math.PI * 2);
-					context.fillStyle = `rgba(${brushColor.r}, ${brushColor.g}, ${brushColor.b}, ${opacity.toFixed(2)})`;
-					context.fill();
-					context.closePath();
-				}
-			}
-
 			// Reset last position on mouse leave
+			// =======================
 			const handleMouseLeave = () => {
 				lastX = null;
 				lastY = null;
@@ -144,18 +147,25 @@
 			document.addEventListener('mousemove', handleDraw);
 			canvas.addEventListener('mouseleave', handleMouseLeave);
 
+			// =======================
 			// Cleanup
+			// =======================
 			return () => {
 				document.removeEventListener('mousemove', handleMouseMove);
 				document.removeEventListener('click', handleClick);
 				document.removeEventListener('mousemove', handleDraw);
 				canvas.removeEventListener('mouseleave', handleMouseLeave);
 			};
+		} else {
+			// =======================
+			// Cleanup for triangle move only
+			// =======================
+			return () => {
+				document.removeEventListener('mousemove', handleMouseMove);
+			};
 		}
 	});
 </script>
-
-
 
 <div class="background-noise"></div>
 <SplatterSVG />
