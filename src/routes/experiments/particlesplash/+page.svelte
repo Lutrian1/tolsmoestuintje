@@ -51,7 +51,6 @@
       }, fade_out_time + 200);
     });
   });
-
 </script>
 
 <main>
