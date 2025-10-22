@@ -49,7 +49,7 @@
         align-items: center;
         flex-direction: column;
         line-height: 10vw;
-        margin-bottom: 6rem;
+        margin: 4rem 0 5rem 0;
 
         span:first-child{
             color: var(--heading-accent-color);
