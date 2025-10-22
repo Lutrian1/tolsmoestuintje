@@ -1,4 +1,6 @@
 <script>
+
+  import { Background } from '$lib';
 	import { page } from '$app/state';
   import { Main_heading } from '$lib';
 
@@ -22,6 +24,8 @@
 
   <a href="/">Home</a>
 </main>
+
+<Background />
 
 <style>
   main{

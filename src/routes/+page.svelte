@@ -2,6 +2,7 @@
     import { Luuk_tol_trademark } from '$lib';
     import { Nav_bar } from '$lib';
     import { Main_heading } from '$lib';
+    import { Background } from '$lib';
 
     import { beforeNavigate } from '$app/navigation';
     import { onMount } from 'svelte';
@@ -27,6 +28,8 @@
 <footer>
     <Luuk_tol_trademark />
 </footer>
+
+<Background />
 
 <style>
 /* ---------------------------------------------      Functions and maths     -------------------------------------------------*/

@@ -1,4 +1,6 @@
 <script>
+    import { Background } from '$lib';
+    
     import { beforeNavigate } from '$app/navigation';
     import { onMount } from 'svelte';
 
@@ -38,6 +40,7 @@
     <a href="/">Go back</a>
 </footer>
 
+<Background />
 
 <style>
     h1{
