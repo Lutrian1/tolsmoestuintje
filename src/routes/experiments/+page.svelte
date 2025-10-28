@@ -1,6 +1,5 @@
 <script>
     import { Background } from '$lib';
-    
     import { onMount } from 'svelte';
 
     // Voor elke route in experiment, maar hier een nieuwe route aan als je nieuwe code hebt.
