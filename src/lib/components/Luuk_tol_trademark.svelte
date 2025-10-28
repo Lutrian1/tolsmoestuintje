@@ -8,9 +8,9 @@
 
 <article class="about-me-container">
 
-    <p class="about-me-text">Hello there! My name is Luuk Tol, and I'm a Front-End Development student at the HVA (University of Applied Sciences Amsterdam). 
-    This site is my Digital Canvas—a personal space where you can see all my goofs and probably not great code, but atleast I learned something from it. 
-    It's my collection of experiments, a playground where I tinker with code, explore new technologies, and push my creative boundaries. 
+    <p class="about-me-text">Hoe-ist! My name is Luuk Tol, and I'm a Front-End Development student at the HVA (University of Applied Sciences Amsterdam). 
+    This site is my Digital Canvas—a personal space where you can see all my goofs and try-outs. Keep in mind iy may not be the best, but atleast I learned something from it. 
+    It's my collection of experiments. I explore new technologies (whenever I have time), and try to push my creative boundaries. 
     So please, scroll around, and see what I have been working on, and hopefully you learn something new too.</p>
 
 </article>

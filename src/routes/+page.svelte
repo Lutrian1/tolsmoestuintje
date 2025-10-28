@@ -4,7 +4,6 @@
     import { Main_heading } from '$lib';
     import { Background } from '$lib';
 
-    import { beforeNavigate } from '$app/navigation';
     import { onMount } from 'svelte';
 
     // Adding grid so the site follows the grid in the global-stylesheet, beforenavigate: https://svelte.dev/docs/kit/$app-navigation

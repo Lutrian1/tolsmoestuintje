@@ -1,11 +1,9 @@
 <script>
-  import { onMount } from 'svelte';
-
   // Koppelen van de button via bind:this zodat we hem in JS kunnen aanspreken
   let button;
 
   // Wacht tot de DOM geladen is
-  onMount(() => {
+  $effect(() => {
 
     let fade_out_time = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--fade-out-time'), 10); // Is hetzelfde als de variable in de stylesheet, de 10 betekent decimals: Jad
     // ParseInt: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
@@ -22,7 +20,7 @@
     }
 
     // Wanneer button wordt geklikt, voer dit uit.
-    button.addEventListener('click', (event) => {
+    const handleClick = (event) => {
       const particles = [];
 
       // Voor elke particle (deze staat dus random tussen 5 en 10), voer onderstaande code uit
@@ -49,7 +47,14 @@
           particle.remove();
         });
       }, fade_out_time + 200);
-    });
+    };
+
+    button?.addEventListener('click', handleClick);
+
+    // Cleanup functie (zoals onDestroy)
+    return () => {
+      button?.removeEventListener('click', handleClick);
+    };
   });
 </script>
 

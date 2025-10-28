@@ -4,7 +4,6 @@
 	import { page } from '$app/state';
   import { Main_heading } from '$lib';
 
-  import { beforeNavigate } from '$app/navigation';
   import { onMount } from 'svelte';
 
   // Adding block so the site doesn't follow the grid used in the homepage

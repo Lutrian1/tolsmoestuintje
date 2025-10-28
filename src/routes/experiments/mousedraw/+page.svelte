@@ -1,9 +1,7 @@
 <script>
-  import { onMount } from 'svelte';
-
   let canvas;
 
-  onMount(() => {
+  $effect(() => {
     const context = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
@@ -42,7 +40,6 @@
     canvas.addEventListener("mousemove", handleMouseMove);
     canvas.addEventListener("mouseleave", handleMouseLeave);
 
-    // Clean up on unmount
     return () => {
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
@@ -51,31 +48,33 @@
 </script>
 
 <main>
-    <h1>Hover here</h1>
-    <canvas bind:this={canvas} style="display: block;"></canvas>
+  <h1>Hover here</h1>
+  <canvas bind:this={canvas} style="display: block;"></canvas>
 </main>
 
 <style>
-    h1{
-       font-size: 64px;
-       opacity: 50%;
-       pointer-events: none;
-    }
-    main{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    canvas{
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      width: 100%;
-      height: 100%;
-    }
+  h1 {
+    font-size: 64px;
+    opacity: 50%;
+    pointer-events: none;
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+  }
 </style>
