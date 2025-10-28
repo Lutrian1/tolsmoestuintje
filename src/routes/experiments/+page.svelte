@@ -5,8 +5,9 @@
 
     // Voor elke route in experiment, maar hier een nieuwe route aan als je nieuwe code hebt.
     const experimentRoutes = [
-		{ date: '11-02-2025', name: 'Mouse draw on hover', type: 'J-Script', path: '/experiments/mousedraw' },
-		{ date: '15-02-2025', name: 'Particle splash on button click', type: 'CSS-Only', path: '/experiments/particlesplash' }
+        { date: '15-10-2025', name: 'Particle splash on button click', type: 'CSS-Only', path: '/experiments/particlesplash' },
+		{ date: '12-10-2025', name: 'Mouse draw on hover', type: 'J-Script', path: '/experiments/mousedraw' },
+        { date: '25-05-2025', name: 'Flower view transition', type: 'CSS-Only', path: '/experiments/flowerviewtrans' }
 	];
 
     // Adding block so the site doesn't follow the grid used in the homepage
@@ -24,11 +25,11 @@
 
     <article>
         <ul>
-            {#each experimentRoutes as route}
+            {#each experimentRoutes as experiment}
                 <li>
-                    <aside>{route.type}</aside>
-                    <a href={route.path}>{route.name}</a>
-                    <aside>{route.date}</aside>
+                    <aside>{experiment.type}</aside>
+                    <a href={experiment.path}>{experiment.name}</a>
+                    <aside>{experiment.date}</aside>
                 </li>
             {/each}
         </ul>
