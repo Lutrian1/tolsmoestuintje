@@ -18,8 +18,8 @@
 
 <div class="flower-new"></div>
 
-<main>
-	<a href="/experiments/flowerviewtrans" on:click={navigateWithTransition}>Go back</a>
+<main class="block">
+	<a href="/experiments/flowerviewtrans" on:click={navigateWithTransition} class="goto-button">Go back</a>
 </main>
 
 <style>

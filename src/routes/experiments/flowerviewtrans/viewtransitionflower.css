@@ -3,7 +3,7 @@
 }
 
 /* -------------------------------- ALGEMENE STYLING VOOR BUTTON EN ALLES IN HET MIDDEN  ----------------------------------- */
-a{
+a.goto-button{
     text-decoration: none;
     width: 175px;
     height: 55px;
@@ -24,7 +24,7 @@ a{
     }
 }
 
-main {
+main.block {
     width: 100%;
     height: 100%;
     position: fixed;

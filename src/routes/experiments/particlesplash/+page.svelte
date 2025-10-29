@@ -2,7 +2,7 @@
   // Koppelen van de button via bind:this zodat we hem in JS kunnen aanspreken
   let button;
 
-  // Wacht tot de DOM geladen is
+  // EFFECT SVELTEKIT: https://svelte.dev/docs/svelte/$effect
   $effect(() => {
 
     let fade_out_time = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--fade-out-time'), 10); // Is hetzelfde als de variable in de stylesheet, de 10 betekent decimals: Jad
