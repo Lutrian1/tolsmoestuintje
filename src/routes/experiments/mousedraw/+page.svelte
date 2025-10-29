@@ -47,14 +47,10 @@
   });
 </script>
 
-<div class="block">
-
-  <main>
-    <h1>Hover here</h1>
-    <canvas bind:this={canvas} style="display: block;"></canvas>
-  </main>
-
-</div>
+<main>
+  <h1>Hover here</h1>
+  <canvas bind:this={canvas} style="display: block;"></canvas>
+</main>
 
 <style>
   h1 {

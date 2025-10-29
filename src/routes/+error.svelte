@@ -4,21 +4,17 @@
   import { Main_heading } from '$lib';
 </script>
 
-<div class="block">
+<main>
+  <h1>Oops, a <strong>404 {page.error.message}</strong></h1>
+  <p>We couldn't find the page you were looking for. Navigate back to the homepage.</p>
 
-  <main>
-    <h1>Oops, a <strong>404 {page.error.message}</strong></h1>
-    <p>We couldn't find the page you were looking for. Navigate back to the homepage.</p>
-
-    <a href="/">Home</a>
-  </main>
-
-</div>
+  <a href="/">Home</a>
+</main>
 
 <Background />
 
 <style>
-  .block{
+  main{
       display: flex;
       width: 100%;
       height: 100%;
@@ -26,12 +22,6 @@
       align-items: center;
       justify-content: center;
       z-index: 5000;
-  }
-
-  main{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
   }
 
   h1{

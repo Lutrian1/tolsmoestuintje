@@ -90,10 +90,6 @@ html[data-reduced-motion="no-preference"] {
     display: grid;
 }
 
-.block{
-    display: block;
-}
-
 /* ---------------------------------------------      GRID - HOMEPAGE      -------------------------------------------------*/
 
 @layer grid-homepage{

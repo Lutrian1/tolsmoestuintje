@@ -9,25 +9,22 @@
 	];
 </script>
 
-<div class="block">
 
-    <main>
-        <h1><span>MY</span> <span>EXPERIMENTS</span></h1>
+<main>
+    <h1><span>MY</span> <span>EXPERIMENTS</span></h1>
 
-        <article>
-            <ul>
-                {#each experimentRoutes as experiment}
-                    <li>
-                        <aside>{experiment.type}</aside>
-                        <a href={experiment.path}>{experiment.name}</a>
-                        <aside>{experiment.date}</aside>
-                    </li>
-                {/each}
-            </ul>
-        </article>
-    </main>
-
-</div>
+    <article>
+        <ul>
+            {#each experimentRoutes as experiment}
+                <li>
+                    <aside>{experiment.type}</aside>
+                    <a href={experiment.path}>{experiment.name}</a>
+                    <aside>{experiment.date}</aside>
+                </li>
+            {/each}
+        </ul>
+    </article>
+</main>
 
 <footer>
     <a href="/">Go back</a>

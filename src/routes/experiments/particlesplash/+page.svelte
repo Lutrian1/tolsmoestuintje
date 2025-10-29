@@ -27,7 +27,8 @@
       dots(random(5, 10)).forEach(() => {
         // Maken van een span, en deze de particle-animations class meegeven
         const particle = document.createElement('span');
-        particle.classList.add('particle-animations');
+        // Add a unique class so it’s easier to target (voeg een unieke class toe, dit moet een :global class zijn, Sveltekit doet ander stom bij het maken van een SPAN)
+        particle.classList.add('particle-animations', 'particle');
 
         // Toevoegen van random angle en distance in css
         const angle = random(0, 360);
@@ -58,14 +59,10 @@
   });
 </script>
 
-<div class="block">
-
-  <main>
-    <button bind:this={button}>Click me</button>
-    <a href="https://codepen.io/Lutrian1/pen/gbPGRJq">Codepen</a>
-  </main>
-
-</div>
+<main>
+  <button bind:this={button}>Click me</button>
+  <a href="https://codepen.io/Lutrian1/pen/gbPGRJq">Codepen</a>
+</main>
 
 <style>
   :root {
@@ -120,20 +117,21 @@
     }
   }
 
-  /* Voor en of andere reden werkt dit alleen met global*/
-  span {
+
+  /* orgineel is dit een span maar voor sveltekit moet dit dus een class zijn */
+  :global(.particle) {
     position: absolute;
     width: 10px;
     height: 10px;
-    background: var(--main-color);
+    background: var(--main-color, #fff);
     border-radius: 50%;
     pointer-events: none;
-    opacity: 1;
     left: 50%;
     top: 50%;
+    opacity: 1;
   }
 
-  .particle-animations {
+  :global(.particle-animations) {
     animation:
       fadeToTransparent var(--fade-out-time) forwards,
       disperse var(--fade-out-time) forwards ease-out;
