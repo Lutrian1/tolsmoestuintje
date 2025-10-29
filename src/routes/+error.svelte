@@ -1,33 +1,24 @@
 <script>
-
   import { Background } from '$lib';
 	import { page } from '$app/state';
   import { Main_heading } from '$lib';
-
-  import { onMount } from 'svelte';
-
-  // Adding block so the site doesn't follow the grid used in the homepage
-	onMount(() => {
-		document.body.style.display = 'block';
-
-		beforeNavigate(() => {
-			document.body.style.display = 'block';
-		});
-	});
-
 </script>
 
-<main>
-  <h1>Oops, a <strong>404 {page.error.message}</strong></h1>
-  <p>We couldn't find the page you were looking for. Navigate back to the homepage.</p>
+<div class="block">
 
-  <a href="/">Home</a>
-</main>
+  <main>
+    <h1>Oops, a <strong>404 {page.error.message}</strong></h1>
+    <p>We couldn't find the page you were looking for. Navigate back to the homepage.</p>
+
+    <a href="/">Home</a>
+  </main>
+
+</div>
 
 <Background />
 
 <style>
-  main{
+  .block{
       display: flex;
       width: 100%;
       height: 100%;
@@ -35,6 +26,12 @@
       align-items: center;
       justify-content: center;
       z-index: 5000;
+  }
+
+  main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   h1{

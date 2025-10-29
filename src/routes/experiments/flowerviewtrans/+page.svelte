@@ -24,6 +24,7 @@
 	<p>This view transition was used for CSS-Day, you can see more in my blog about this. It uses the new CSS View Transitions API. The support for this is still limited.</p>
 </main>
 
+
 <style>
 	:root {
 		--clockwise: large cw;
@@ -51,4 +52,5 @@
 		text-align: center;
 		font-size: 2.5rem;
 	}
+	
 </style>

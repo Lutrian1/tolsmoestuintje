@@ -58,11 +58,14 @@
   });
 </script>
 
-<main>
-  <button bind:this={button}>Click me</button>
-  <a href="https://codepen.io/Lutrian1/pen/gbPGRJq">Codepen</a>
-</main>
+<div class="block">
 
+  <main>
+    <button bind:this={button}>Click me</button>
+    <a href="https://codepen.io/Lutrian1/pen/gbPGRJq">Codepen</a>
+  </main>
+
+</div>
 
 <style>
   :root {
@@ -118,7 +121,7 @@
   }
 
   /* Voor en of andere reden werkt dit alleen met global*/
-  :global(span) {
+  span {
     position: absolute;
     width: 10px;
     height: 10px;
@@ -130,7 +133,7 @@
     top: 50%;
   }
 
-  :global(.particle-animations) {
+  .particle-animations {
     animation:
       fadeToTransparent var(--fade-out-time) forwards,
       disperse var(--fade-out-time) forwards ease-out;

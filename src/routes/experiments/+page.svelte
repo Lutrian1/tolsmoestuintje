@@ -1,6 +1,5 @@
 <script>
     import { Background } from '$lib';
-    import { onMount } from 'svelte';
 
     // Voor elke route in experiment, maar hier een nieuwe route aan als je nieuwe code hebt.
     const experimentRoutes = [
@@ -8,32 +7,27 @@
 		{ date: '12-10-2025', name: 'Mouse draw on hover', type: 'J-Script', path: '/experiments/mousedraw' },
         { date: '25-05-2025', name: 'Flower view transition', type: 'CSS-Only', path: '/experiments/flowerviewtrans' }
 	];
-
-    // Adding block so the site doesn't follow the grid used in the homepage
-	onMount(() => {
-		document.body.style.display = 'block';
-
-		beforeNavigate(() => {
-			document.body.style.display = 'block';
-		});
-	});
 </script>
 
-<main>
-    <h1><span>MY</span> <span>EXPERIMENTS</span></h1>
+<div class="block">
 
-    <article>
-        <ul>
-            {#each experimentRoutes as experiment}
-                <li>
-                    <aside>{experiment.type}</aside>
-                    <a href={experiment.path}>{experiment.name}</a>
-                    <aside>{experiment.date}</aside>
-                </li>
-            {/each}
-        </ul>
-    </article>
-</main>
+    <main>
+        <h1><span>MY</span> <span>EXPERIMENTS</span></h1>
+
+        <article>
+            <ul>
+                {#each experimentRoutes as experiment}
+                    <li>
+                        <aside>{experiment.type}</aside>
+                        <a href={experiment.path}>{experiment.name}</a>
+                        <aside>{experiment.date}</aside>
+                    </li>
+                {/each}
+            </ul>
+        </article>
+    </main>
+
+</div>
 
 <footer>
     <a href="/">Go back</a>
