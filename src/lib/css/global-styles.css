@@ -283,3 +283,12 @@ html[data-reduced-motion="no-preference"] {
     }
 }
 
+/* ---------------------------------------------      VIEWTRANSTION         -------------------------------------------------*/
+
+@layer view-transition{
+    
+    @view-transition {
+        navigation: auto;
+    }
+    
+}

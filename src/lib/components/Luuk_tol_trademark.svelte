@@ -6,15 +6,6 @@
 
 <h2> Luuk <span>Tol.</span></h2>
 
-<article class="about-me-container">
-
-    <p class="about-me-text">Hoe-ist! My name is Luuk Tol, and I'm a Front-End Development student at the HVA (University of Applied Sciences Amsterdam). 
-    This site is my Digital Canvas—a personal space where you can see all my goofs and try-outs. Keep in mind iy may not be the best, but atleast I learned something from it. 
-    It's my collection of experiments. I explore new technologies (whenever I have time), and try to push my creative boundaries. 
-    So please, scroll around, and see what I have been working on, and hopefully you learn something new too.</p>
-
-</article>
-
 <style>
     .copyright{
         position: absolute;
@@ -34,7 +25,6 @@
         position: relative;
         max-width: 15rem;
         display: flex;
-        justify-content: center;
         flex-direction: column;
         margin: 0;
           text-shadow: 
@@ -49,37 +39,6 @@
             1px  1px 5px #000;
         span{
             color: var(--main-accent-color);
-        }
-    }
-
-    .about-me-text{
-        font-size: clamp(0.7rem, 3vw, 1.75rem);
-        margin: 0;
-        animation: animation_left-slide-in 1.3s ease-in-out;
-    }
-
-    .about-me-container{
-        position: relative;
-        display: flex;
-        align-items: center;
-        &::before{
-            border-left: 2px solid black;
-            content: "";
-            display: block;
-            height: 10rem;
-            left: -2vw;
-            position: absolute;
-            width: 1px;
-            z-index: 0;
-        }
-    }
-
-    @container footer (width < 65.625rem) {
-        .about-me-container{
-            max-width: 45rem;
-            .about-me-text{
-                font-size: clamp(0.7rem, 3vw, 1.5rem);
-            }
         }
     }
 </style>
