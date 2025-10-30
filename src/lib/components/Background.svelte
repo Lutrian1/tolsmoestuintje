@@ -15,7 +15,7 @@
 	let width, height;
 	let lastX = null;
 	let lastY = null;
-	const brushColor = $state('#bb57c4'); // #BB57C4 in RGB
+	const brushColor = $state('#bb57c4');
 	let baseBrushSize;
 
 	// =======================
@@ -133,7 +133,6 @@
 				context.stroke();
 				context.closePath();
 
-				// Optional splatter effect
 				if (Math.random() < 0.1) {
 					drawSplatter(x, y);
 				}
