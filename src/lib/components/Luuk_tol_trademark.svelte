@@ -4,9 +4,13 @@
           
 </aside>
 
-<h2> Luuk <span>Tol.</span></h2>
+<a href="/"><h2> Luuk <span>Tol.</span></h2></a>
 
 <style>
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
     .copyright{
         position: absolute;
         font-size: 0.9rem;
