@@ -50,11 +50,11 @@
       }, fade_out_time + 200);
     };
 
-    button?.addEventListener('click', handleClick);
+    button.addEventListener('click', handleClick);
 
     // Cleanup functie (zoals onDestroy)
     return () => {
-      button?.removeEventListener('click', handleClick);
+      button.removeEventListener('click', handleClick);
     };
   });
 </script>
