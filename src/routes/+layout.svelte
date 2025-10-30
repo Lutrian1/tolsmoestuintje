@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<link rel="icon" href={signature} />
-	<title>Digital garden</title>
+	<title>Digital Canvas</title>
 </svelte:head>
 
 {@render children?.()}
