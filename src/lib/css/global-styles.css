@@ -290,5 +290,9 @@ html[data-reduced-motion="no-preference"] {
     @view-transition {
         navigation: auto;
     }
-    
+
+    .view-transition-to{
+        view-transition-name: vt-from-to;
+    }
+
 }

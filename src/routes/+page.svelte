@@ -36,13 +36,6 @@
 
 
 <style>
-
-/* ---------------------------------------------      Adds where the h2 should be placed     -------------------------------------------------*/
-
-:global(h2){
-    justify-content: center;
-}
-
 /* ---------------------------------------------      Height function that changes height with media queries      -------------------------------------------------*/
 
 .grid{
@@ -86,6 +79,7 @@
 
     footer{
         display: grid;
+        align-self: center;
         gap: 1.5rem;
         grid-auto-columns: 1fr; 
         grid-template-columns: 0.4fr 1.5fr; 

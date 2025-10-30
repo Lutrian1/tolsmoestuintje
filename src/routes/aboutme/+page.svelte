@@ -1,6 +1,7 @@
 <script>
     import { Luuk_tol_trademark } from '$lib';
     import { Nav_bar } from '$lib';
+    import { Background_side_triangle } from '$lib';
 </script>
 
 <div class="grid">
@@ -55,13 +56,9 @@
 
 </div>
 
+<Background_side_triangle />
+
 <style>
-
-/* ---------------------------------------------      Adds where the h2 should be placed     -------------------------------------------------*/
-
-:global(h2){
-    justify-content: flex-start;
-}
 
 /* ---------------------------------------------      Height function that changes height with media queries      -------------------------------------------------*/
 
@@ -106,20 +103,8 @@ main{
 
     .about-me-container{
         position: relative;
-        align-self: center;
         overflow: scroll;
-        width: 100%;
         height: 600px;
-        &::before{
-            border-left: 2px solid black;
-            content: "";
-            display: block;
-            height: 10rem;
-            left: -2vw;
-            position: absolute;
-            width: 1px;
-            z-index: 0;
-        }
     }
 
     @container footer (width < 65.625rem) {
@@ -130,4 +115,5 @@ main{
             }
         }
     }
+
 </style>

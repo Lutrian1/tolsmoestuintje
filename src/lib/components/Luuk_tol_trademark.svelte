@@ -30,6 +30,7 @@
         max-width: 15rem;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         margin: 0;
           text-shadow: 
             2px   0  0   #000, 
